@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-page">
+            <div class="nav-left">
+                <span>facebook</span>
+            </div>
+            <div class="nav-center">
+                <input type="search" placeholder="Search Facebook">
+            </div>
+            <div class="nav-right">
+                <p><i class="fa fa-comment" aria-hidden="true"></i></p>
+                  <p><i class="fa fa-bell" aria-hidden="true"></i></p>  
+                <p>
+                    {% if image %}
+                    <img src="{{ image }}" alt="">
+                    {% endif %}
+                </p>
+                <div class="drop-down">
+                    <h3><a href="{{url_for('logout')}}">Logout</a></h3>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="fb-user-id">
+            <div class="home-left1">
+                <ul>
+                    <li><a href="{{url_for('home')}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                    <li>
+                        {% if image %}
+                        <a href="{{url_for('user')}}"><img src="{{ image }}" alt=""></a>
+                        {% endif %}
+                    </li>
+                    <hr>
+                    <li><a href="#"><i class="fa fa-television" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-gamepad" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i></a></li>
+                    <hr>
+                    <li><a href="#"><img src="../static/image/group1.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="../static/image/group2.jpg" alt=""></a></li>
+                    <li><a href="#"><img src="../static/image/group3.jpg" alt=""></a></li>
+                    <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i></a></li>
+                    <hr>
+                    <li><a href="#"><img src="../static/image/game1.png" alt=""></a></li>
+                    <li><a href="#"><img src="../static/image/game2.png" alt=""></a></li>
+                    <li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        <div class="user-info">
+            <div class="user-info-center">
+                <p><i class="fa fa-camera" aria-hidden="true"></i> Edit cover photo</p>
+            </div>
+            <div class="user-details">
+                <div class="user-pic">
+                    {% if image %}
+                     <img src="{{ image }}" alt="User Image">
+                     {% endif %}
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                </div>
+                <div class="user-name">
+                    <h1>{{username}}</h1>
+                    <p>700 Friends</p>
+                    <p class="img">
+                        <img src="../static/image/akashraj.jpg" alt="">
+                        <img src="../static/image/ari.jpg" alt="">
+                        <img src="../static/image/shan.jpg" alt="">
+                        <img src="../static/image/priyajoy.jpg" alt="">
+                        <img src="../static/image/jaya.jpg" alt="">
+                        <img src="../static/image/karthir.jpg" alt="">
+                        <img src="../static/image/sakthiajith.jpg" alt="">
+                        <img src="../static/image/romeo karthi.jpg" alt="">
+                    </p>
+                </div>
+                <div class="user-story">
+                    <p><a href="#">Add to story</a>
+                        <span><a href="#">Edit profile</a></span></p>
+                </div>
+                <div class="user-hr">
+                    <hr>
+                </div>
+            </div>
+            <div class="about-user">
+                <div class="about-list">
+                    <a href="#">Posts</a>
+                    <a href="#">About</a>
+                    <a href="#">Friends</a>
+                    <a href="#">Photos</a>
+                    <a href="#">Videos</a>
+                    <a href="#">Check-ins</a>
+                    <a href="#">More</a>
+                </div>
+                <div class="about-list1">
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section class="posts">
+        <div class="posts-left">
+            <div class="users-info">
+                <h1>Info</h1>
+                <p>As Long as you alive. There are infinite chances</p>
+                <p class="infoa"><a href="#"> Edit bio </a></p>
+                <p><i class="fa fa-heart" aria-hidden="true"></i> Single</p>
+                <p class="follow"><i class="fa fa-wifi" aria-hidden="true"></i> Followed by 300 People</p>
+                <p class="infoa"><a href="#">Edit details </a></p>
+                <p class="infoa"><a href="#">Add hobbies</a></p>
+                <p class="infoa"><a href="#">Add featured</a></p>
+            </div>
+            <div class="allphoto">
+                <div class="photos">
+                    <div class="pho">
+                        <h1><a href="#">Photos</a></h1>
+                    </div>
+                    <div class="more-pho">
+                        <h2><a href="#">See all Photos</a></h2>
+                    </div>
+                </div>
+                <div class="pho">
+                    
+                </div>
+                
+            </div>
+                <div class="friends">
+                    <div class="fri">
+                        <div class="fri1">
+                            <h1><a href="#">Friends</a></h1>
+                            <p>700 friends</p>
+                        </div>
+                        <div class="fri2">
+                            <h2><a href="#">See all friends</a></h2>
+                        </div>
+                    </div>
+                    <div class="fri-photo">
+                        <div class="friphoto1">
+                            <p><img src="../static/image/fri1.jpg" alt=""></p>
+                            <p>Kishore Lakshu</p>
+                        </div>
+                        <div class="friphoto1">
+                            <p><img src="../static/image/fri2.jpg" alt=""></p>
+                            <p>Kishore</p>
+                        </div>
+                        <div class="friphoto1">
+                            <p><img src="../static/image/priyajoy.jpg" alt=""></p>
+                            <p>Priya Joy</p>
+                        </div>
+                        <div class="friphoto1">
+                            <p><img src="../static/image/shan.jpg" alt=""></p>
+                            <p>Shanthi</p>
+                        </div>
+                        <div class="friphoto1">
+                            <p><img src="../static/image/fri3.jpg" alt=""></p>
+                            <p>Arun Kumar</p>
+                        </div>
+                        <div class="friphoto1">
+                            <p><img src="../static/image/fri4.jpg" alt=""></p>
+                            <p>Parthiban</p>
+                        </div>
+                        <div class="friphoto1">
+                            <p><img src="../static/image/fri5.jpg" alt=""></p>
+                            <p>Deeshanth</p>
+                        </div>
+                        <div class="friphoto1">
+                            <p><img src="../static/image/fri7.jpg" alt=""></p>
+                            <p>Shayam</p>
+                        </div>
+                        <div class="friphoto1">
+                            <p><img src="../static/image/livees.jpg" alt=""></p>
+                            <p>Livees</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="life-events">
+                    <div class="even">
+                        <div class="eve1">
+                            <h1><a href="#">Life events</a></h1>
+                        </div>
+                        <div class="eve2">
+                            <h3><a href="#">See all</a></h3>   
+                        </div>
+                    </div>
+                    <div class="eventtt">
+                        <div class="eventt">
+                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                        <p class="qq">Started school at</p>
+                        <p class="qq2">Immaculate Heart of</p>
+                        <p class="qq3">mary's Higher Secondar...</p>
+                        <p class="qq4">june 5, 2011</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="gr">Privacy  · Terms  · Advertising  · Ad Choices   · Cookies  ·   · Meta © 2023</p>
+    
+            
+        </div>
+        <div class="posts-right">
+            <div class="user-post-photo">
+                <div class="post-story">
+                    <div class="sss">
+                        <div class="s1">
+                            {% if image %}
+                            <img src="{{ image }}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="s2">
+                            <span><label for=""></label>
+                                <input type="text" placeholder="What's on your mind, {{username}} ?"></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="sugg">
+                        <div class="sug1">
+                            <p><i class="fa fa-video-camera" aria-hidden="true"></i> Live Video</p>
+                        </div>
+                        <div class="sug2">
+                            <p><a href="{{url_for('upload')}}"><i class="fa fa-camera" aria-hidden="true"></i> Photo/Video</a></p>
+                        </div>
+                        <div class="sug3">
+                            <p><i class="fa fa-flag" aria-hidden="true"></i>Feeling/Activity</p>
+                        </div>
+                    </div>
+                </div>
+
+                {%for j in posts%}
+                <div class="postt">
+                    <div class="post-flexx">
+                        <div class="post11">
+                            {% if image %}
+                     <img src="{{ image }}" alt="User Image">
+                     {% endif %}
+                        </div>
+                        <div class="post22">
+                            <h3>{{username}}</h3>
+                            <p>3 days ago</p>
+                        </div>
+                        <div class="post33">
+                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                            <a href="{{url_for('edit',image_content= j.image_content)}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                            <a href="{{url_for('delete',image_content= j.image_content)}}"><i class="fa fa-trash" aria-hidden="true"></i></a> 
+                        </div>
+                    </div>
+                    <p>{{j.image_content}}</p>
+                    <div class="imagg">
+                        <img src="{{url_for('static', filename=j.image)}}" alt="">
+                    </div>
+                    <div class="likess">
+                        <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> you and 29 Likes</p> 
+                    </div>
+                    <hr>
+                    <div class="like-secc">
+                        <div class="sec-likee">
+                            <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</p>
+                        </div>
+                        <div class="sec-comm">
+                            <p><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</p>
+                        </div>
+                        <div class="sec-sharee">
+                            <p><i class="fa fa-share" aria-hidden="true"></i> Share</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="commentss">
+                        <div class="com-imgg">
+                            {% if image %}
+                            <img src="{{ image }}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="con-inn">
+                            <input type="text" placeholder="Write a Comment">
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            {%endfor%}
+
+                <div class="postt">
+                    <div class="post-flexx">
+                        <div class="post11">
+                            {% if image %}
+                            <img src="{{ image }}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="post22">
+                            <h3>{{username}} <span> Updated his profile picture</span></h3>
+                            <p>Just now</p>
+                        </div>
+                        <div class="post33">
+                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                            <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                            
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="imagg">
+                        {% if image %}
+                            <img src="{{ image }}" alt="">
+                            {% endif %}
+                    </div>
+                    <div class="likess">
+                        <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> you and 29 Likes</p> 
+                    </div>
+                    <hr>
+                    <div class="like-secc">
+                        <div class="sec-likee">
+                            <p><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</p>
+                        </div>
+                        <div class="sec-comm">
+                            <p><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</p>
+                        </div>
+                        <div class="sec-sharee">
+                            <p><i class="fa fa-share" aria-hidden="true"></i> Share</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="commentss">
+                        <div class="com-imgg">
+                            {% if image %}
+                            <img src="{{ image }}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="con-inn">
+                            <input type="text" placeholder="Write a Comment">
+                        </div>
+                    </div>
+                </div>
+
+            
+               
+        </div>
+    </section>
+</body>
+</html>

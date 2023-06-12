@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="login-page">
+            <div class="face-login">
+                <h1>facebook</h1>
+                <p>Facebook helps you to connect and share <br>
+                   with the people in your life</p>
+            </div>
+            <div class="login-setup">
+                <div class="login-border">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul class="flash-messages">
+                            {% for message in messages %}
+                                <li class="flash-message">{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
+                   <form action="{{url_for('index')}}" method="POST">
+                    <label for="email"></label>
+                    <input type="text" placeholder="Email address or phone number" id="email" name="email" required><br>
+                    <label for="password"></label>
+                    <input type="password" placeholder="password"  id="password" name="password" required><br>
+                    <p class="login-blue"><input type="submit" value="Log in"></p>
+                    
+                   </form>
+                    <span><a href="#">Forgotten password ?</a></span>
+                    <hr>
+                    <button><a href="{{url_for('register')}}">Create new account</a></button>
+                </div>
+                <p><a href="#">Create a page</a> for a celebrity, brand or business</p>
+                
+            </div>
+        </div>
+    </section>
+</body>
+</html>

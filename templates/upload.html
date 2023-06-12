@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-page">
+            <div class="nav-left">
+                <span>facebook</span>
+            </div>
+            <div class="nav-center">
+                <input type="search" placeholder="Search Facebook">
+            </div>
+            <div class="nav-right">
+                <p><i class="fa fa-comment" aria-hidden="true"></i></p>
+                  <p><i class="fa fa-bell" aria-hidden="true"></i></p>  
+                <p>
+                    {% if image %}
+                    <img src="{{ image }}" alt="">
+                    {% endif %}
+                </p>
+                <div class="drop-down">
+                    <h3><a href="{{url_for('logout')}}">Logout</a></h3>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="upload">
+        <div class="upload-form">
+            <a href="{{url_for('user')}}"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+            <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                <label for="image">Select Image</label>
+                <input type="file" placeholder="Choose image" name="image"  accept="image/*"><br>
+                <label for="image_content" class="moo">Write</label>
+                <input type="text" placeholder="What'ss on your mind?" name="image_content"><br>
+                <input type="submit" value="submit" class="submit">
+            </form>
+                    
+            
+        </div>
+    </section>
+    
+</body>
+</html>
